@@ -9,11 +9,10 @@ import { Observable } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  gridUsers: Array<any>;
-  gridDataTable: any;
+export class LoginComponent implements OnInit {  
+  gridDataTable: any[];
   gridUsersArray: any[];
-  items: any;
+  
   constructor(private router: Router, db: AngularFirestore, private CommonService: CommonService) {          
   }
 
@@ -22,6 +21,11 @@ export class LoginComponent implements OnInit {
        this.gridUsersArray = data;
        console.log('this.gridUsersArray: ', this.gridUsersArray);
      });
+
+     this.CommonService.getGridData().subscribe(data => {
+      this.gridDataTable = data;
+      console.log('this.gridDataTable: ', this.gridDataTable);
+    });
      
   }
 

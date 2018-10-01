@@ -31,63 +31,95 @@
     </tr>
   </tbody>
 </table> -->
-<header class="h-100">
-  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" [containerInside]="true">
-    <mdb-navbar-brand>
-      <a class="logo navbar-brand" href="#">
-        <strong>Navbar</strong>
-      </a>
-    </mdb-navbar-brand>
-    <links>
+
+
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Navbar</a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+  
+      <!-- Links -->
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active waves-light">
-          <a class="nav-link">Home
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item waves-light" mdbWavesEffect>
-          <a class="nav-link">Link</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
         </li>
-        <li class="nav-item waves-light" mdbWavesEffect>
-          <a class="nav-link">Profile</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
         </li>
-      </ul>
-    </links>
-  </mdb-navbar>
-  <!-- Main -->
-  <div class="view">
-    <div class="full-bg-img">
-      <div class="mask rgba-indigo-slight flex-center">
-        <div class="container">
-          <div class="white-text text-center wow fadeInUp">
-            <h2>This Navbar isn't fixed</h2>
-            <h5>When you scroll down it will disappear</h5>
-            <br>
-            <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
+  
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
           </div>
+        </li>
+  
+      </ul>
+      <!-- Links -->
+  
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         </div>
-      </div>
+      </form>
     </div>
-  </div>
-  <!-- /.Main -->
-</header>
-<!--Main Navigation-->
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
 
-<!--Main Layout-->
-<main class="text-center py-5 mt-3">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-
-        <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      </div>
-    </div>
-  </div>
-
-</main>
-<!--Main Layout-->
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+  

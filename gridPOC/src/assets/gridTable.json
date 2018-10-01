@@ -1,0 +1,38 @@
+{"gridTableData": [
+    {
+      "company": "MOBILDATA",
+      "address": "403 Dare Court, Needmore, Virgin Islands, 8087",
+      "foundation": 1990,
+      "shareprice": "158.19",
+      "marketcap": "Mid Cap"
+    },
+    {
+      "company": "ENTHAZE",
+      "address": "747 Crooke Avenue, Enlow, Mississippi, 2285",
+      "foundation": 1982,
+      "shareprice": "660.31",
+      "marketcap": "Small Cap"
+    },
+    {
+      "company": "CYTRAK",
+      "address": "991 Times Placez, Matthews, Vermont, 6072",
+      "foundation": 2016,
+      "shareprice": "516.84",
+      "marketcap": "Small Cap"
+    },
+    {
+      "company": "ZERBINA",
+      "address": "654 Grace Court, Cressey, California, 6158",
+      "foundation": 2006,
+      "shareprice": "873.58",
+      "marketcap": "Large Cap"
+    },
+    {
+      "company": "PYRAMIS",
+      "address": "275 Gelston Avenue, Blackgum, Idaho, 7015",
+      "foundation": 1996,
+      "shareprice": "493.7",
+      "marketcap": "Large Cap"
+    }
+  ]
+}

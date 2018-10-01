@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GridTable } from '../service/grid-user';
 
 @Component({
   selector: 'app-gridpoc',
