@@ -20,13 +20,7 @@ export class LoginComponent implements OnInit {
      this.CommonService.getGridUsers().subscribe(data => {
        this.gridUsersArray = data;
        console.log('this.gridUsersArray: ', this.gridUsersArray);
-     });
-
-     this.CommonService.getGridData().subscribe(data => {
-      this.gridDataTable = data;
-      console.log('this.gridDataTable: ', this.gridDataTable);
-    });
-     
+     });          
   }
 
   signIn(){

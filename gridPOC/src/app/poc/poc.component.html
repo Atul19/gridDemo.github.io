@@ -15,13 +15,13 @@
     
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" routerLink="home" routerLinkActive="active">Home
+          <li class="nav-item" [ngClass]="{ 'active': nav1.isActive}">
+            <a class="nav-link" routerLink="home" routerLinkActive #nav1="routerLinkActive">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)" routerLink="gridpoc" routerLinkActive="active">GridPOC</a>
+          <li class="nav-item" [ngClass]="{ 'active': nav2.isActive}">
+            <a class="nav-link" href="javascript:void(0)" routerLink="gridpoc" routerLinkActive #nav2="routerLinkActive">GridPOC</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">Pricing</a>

@@ -51,6 +51,14 @@
         <td>Otto</td>
         <td>@mdo</td>
       </tr>       -->
+      <tr *ngFor="let data of gridDataTable; let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{data.company}}</td>
+        <td>{{data.marketcap}}</td>
+        <td>{{data.shareprice}}</td>
+        <td>{{data.address}}</td>
+        <td>{{data.foundation}}</td>
+      </tr>
     </tbody>
   </table>
 </div>

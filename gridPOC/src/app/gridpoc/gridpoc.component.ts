@@ -10,19 +10,10 @@ import {CommonService} from "../service/common.service";
   styleUrls: ['./gridpoc.component.scss']
 })
 export class GridpocComponent implements OnInit {
-
-  itemRef: AngularFireObject<any>;
-  item: Observable<any>;
-  gridData: any;
+  
   gridDataTable: any[];
 
-  constructor(db: AngularFireDatabase, private CommonService: CommonService) {
-    this.itemRef = db.object('item');
-    this.itemRef.valueChanges().subscribe(data =>{
-      console.log('gridData: ',data);
-      this.gridData = data;
-      console.log("this.item: ", this.gridData);
-    });
+  constructor(db: AngularFireDatabase, private CommonService: CommonService) {    
         
   }
 
