@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GridpocComponent } from './gridpoc/gridpoc.component';
+import { HomeComponent } from './home/home.component';
+import { PocComponent } from './poc/poc.component';
 
 // const routes: Routes = [];
 
 const routes: Routes = [
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {
-    path: '',
+    path: 'login',
     component: LoginComponent
   },
   {
@@ -16,9 +19,15 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'gridpoc',
-    component: GridpocComponent
+    path: 'poc',
+    component: PocComponent,
+    children: [      
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      { path: 'home', component: HomeComponent },  
+      { path: 'gridpoc', component: GridpocComponent }       
+    ]
   }
+  
 ];
 
 @NgModule({

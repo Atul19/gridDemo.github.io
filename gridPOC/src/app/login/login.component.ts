@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
   }
 
   signIn(){
-    console.log('this.gridUsersArray signIn: ', this.gridUsersArray);
-    this.router.navigate(['gridpoc'])
+    console.log('this.gridUsersArray signIn: ', this.gridDataTable);
+    this.router.navigate(['poc'])
   }
 
   signUp(){

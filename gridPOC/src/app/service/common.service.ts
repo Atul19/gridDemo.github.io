@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -30,6 +31,7 @@ export class CommonService {
   getGridData(){
     this.gridTableCollection = this.firebasedb.collection('gridPocTable');
     this.gridTableData = this.gridTableCollection.valueChanges();
+    
     return this.gridTableData;
   }
 
