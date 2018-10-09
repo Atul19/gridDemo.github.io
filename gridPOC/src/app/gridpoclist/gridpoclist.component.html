@@ -1,0 +1,71 @@
+<div class="card card-body">
+  <form class="example-form">
+      <div class="container">
+          <div class="row">
+              <div class="col-2">
+                  <mat-form-field class="fullwidth">
+                      <input type="text" matInput placeholder="Company" id="company" [(ngModel)]="data.company" name="company">
+                  </mat-form-field>
+              </div>
+              <div class="col-2">                    
+                  <mat-form-field>
+                      <mat-select placeholder="Market Cap" [(ngModel)]="data.marketcap" name="marketcap">
+                          <mat-option *ngFor="let m of marketCaps" [value]="m.size">
+                              {{m.size}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </div>
+              <div class="col-2">
+                  <mat-form-field class="example-full-width">
+                      <input type="text" matInput placeholder="sharePrice" id="Share Price" [(ngModel)]="data.shareprice" name="shareprice">
+                  </mat-form-field>
+              </div>
+              <div class="col-2">
+                  <mat-form-field class="example-full-width">
+                      <input type="text" matInput placeholder="Address" id="address" [(ngModel)]="data.address" name="address">
+                  </mat-form-field>
+              </div>
+              <div class="col-2">
+                  <mat-form-field class="example-full-width">
+                      <input type="number" matInput placeholder="Foundation" id="foundation" [(ngModel)]="data.foundation" name="foundation">
+                  </mat-form-field>
+              </div>
+              <div class="col-2">
+                  <button type="button" class="btn btn-success" (click)="addGridDataList(data)">Add</button>
+              </div>
+
+          </div>
+      </div>
+  </form>
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Company</th>
+        <th scope="col">Market Cap</th>
+        <th scope="col">Share Price</th>
+        <th scope="col">Address</th>
+        <th scope="col">Foundation</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>      
+      <tr *ngFor="let data of gridDataListArray; let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{data.company}}</td>
+        <td>{{data.marketcap}}</td>
+        <td>{{data.shareprice}}</td>
+        <td>{{data.address}}</td>
+        <td>{{data.foundation}}</td>
+        <td><button type="button" class="btn btn-primary">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteGridDataList(data, i)">Del</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

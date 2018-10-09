@@ -11,3 +11,14 @@ export interface GridTable {
     marketcap?: string
 }
 
+
+export class GridTableData {
+    constructor(
+        company?: string,
+        address?: string,
+        foundation?: number,
+        shareprice?: number,
+        marketcap?: string
+    ) {}
+  }
+  

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GridpocComponent } from './gridpoc/gridpoc.component';
+import { GridpoclistComponent } from './gridpoclist/gridpoclist.component';
 import { HomeComponent } from './home/home.component';
 import { PocComponent } from './poc/poc.component';
 
@@ -24,7 +25,8 @@ const routes: Routes = [
     children: [      
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent },  
-      { path: 'gridpoc', component: GridpocComponent }       
+      { path: 'gridpoc', component: GridpocComponent },
+      { path: 'gridpoclist', component: GridpoclistComponent }       
     ]
   }
   

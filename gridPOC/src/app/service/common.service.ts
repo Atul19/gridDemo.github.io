@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireObject, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -18,8 +18,11 @@ export class CommonService {
   gridTableData: Observable<GridTable[]>;
   gridData:any;
 
-  constructor(private firebasedb: AngularFirestore) { 
-       
+  gridDataList: AngularFireList<any>; 
+
+  constructor(private firebasedb: AngularFirestore, private gridDB: AngularFireDatabase) { 
+    this.gridTableCollection = this.firebasedb.collection('gridPocTable');
+    this.gridTableData = this.gridTableCollection.valueChanges();
   }
 
   getGridUsers(){   
@@ -33,6 +36,31 @@ export class CommonService {
     this.gridTableData = this.gridTableCollection.valueChanges();
     
     return this.gridTableData;
+  }
+
+  addGridData(data){
+    this.gridTableCollection.add(data);
+  }
+
+  deleteGridData(){
+    
+  }
+
+  getGridDataList(){
+    this.gridDataList = this.gridDB.list("gridTableData");
+    return this.gridDataList;
+  }
+
+  addGridDataList(data){
+    this.gridDataList.push(data);
+  }
+
+  checkOrUncheckTodo($key: string, flag: boolean){
+    this.gridDataList.update($key, {isChecked: flag});
+  }
+
+  removeGridDataList($key: string){
+    this.gridDataList.remove($key);
   }
 
 }
