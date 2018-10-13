@@ -55,8 +55,10 @@ export class CommonService {
     this.gridDataList.push(data);
   }
 
-  checkOrUncheckTodo($key: string, flag: boolean){
-    this.gridDataList.update($key, {isChecked: flag});
+  updateGridDataList(data){
+    const $key = data.$key;
+    delete data.$key;
+    this.gridDataList.update($key, data);
   }
 
   removeGridDataList($key: string){

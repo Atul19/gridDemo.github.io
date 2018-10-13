@@ -10,6 +10,7 @@ import {CommonService} from "../service/common.service";
 })
 export class GridpoclistComponent implements OnInit {
   
+  update:boolean = false;
   gridDataListArray: any[];
   data = {};
   marketCaps = [
@@ -22,7 +23,7 @@ export class GridpoclistComponent implements OnInit {
         
   }
 
-  ngOnInit() {    
+  ngOnInit() {        
 
     this.CommonService.getGridDataList().snapshotChanges().subscribe(item => {
       this.gridDataListArray = [];
@@ -37,15 +38,30 @@ export class GridpoclistComponent implements OnInit {
 
   }
 
-  addGridDataList(gridataList){
-    if(gridataList){      
-      this.CommonService.addGridDataList(gridataList);
-      this.data = {};
-    }    
-  }  
+  addGridDataList(gridataList, update){
+    if(gridataList){
+      if(this.update === true){
+        this.CommonService.updateGridDataList(gridataList);
+      }else{
+        this.CommonService.addGridDataList(gridataList);
+      }                  
+    }
+    this.data = {};
+    this.update = false;    
+  }
+  
+  editGridDataList(data){
+    this.update = true;
+    this.data = Object.assign({},data);    
+  }
   
   deleteGridDataList(data){    
     this.CommonService.removeGridDataList(data.$key);
+  }
+
+  cancel(){
+    this.data = {};
+    this.update = false;
   }
 
 }
